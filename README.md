@@ -1,6 +1,9 @@
 🧠 Brain Breast Tumor AI Detection Tool with Explainable AI
 Brain Breast Tumor is a full-stack medical imaging application designed for detecting tumors in MRI and Breast Scan images. It leverages deep learning (CNNs) to provide real-time predictions and GradCAM (Gradient-weighted Class Activation Mapping) visualizations to highlight areas of medical interest.
 The project encompasses a modern ML deployment stack, including a FastAPI backend serving the model, Docker containerization, and continuous integration and deployment to Kubernetes using GitLab CI/CD.
+
+```
+
 🏗️ Project Architecture
 Frontend: Web UI for uploading scans and viewing inference results/GradCAM heatmaps.
 Backend (FastAPI): Asynchronous Python REST API handling model inference and visualization.
@@ -8,23 +11,14 @@ AI Core (TensorFlow): Custom CNN implementations dynamically loaded for inferenc
 Containerization (Docker): Standardized application packaging.
 Orchestration (Kubernetes): Deployment manifests for Google Kubernetes Engine (GKE).
 CI/CD Pipeline (GitLab): Automated Docker build, push, and Kubernetes deployment.
-📂 Folder Structure
+
 ```
-├── backend/                  # FastAPI Application Core
-│   ├── models/               # Model lazy loaders
-│   ├── utils/                # Inference, GradCAM, and Logging utilities
-│   ├── config.py             # Global configurations
-│   └── main.py               # API Endpoints (/predict, /gradcam)
-├── frontend/                 # Web Application UI
-├── documentation/            # Project documentation and artifacts
-├── experiments/              # Model training experiments 
-├── Dockerfile                # Image definition for the mlops-app
-├── kubernetes-deployment.yaml# Kubernetes Deployment & LoadBalancer Service
-├── .gitlab-ci.yml            # CI/CD pipeline steps
-├── run.py                    # Application Entrypoint
-├── requirements.txt          # Python deployment dependencies
-└── setup.py                  # Package installation logic
+Architecture Diagram
+
+CLASS RESOURCES/Architecture diagram.png
+
 ```
+
 🚀 Getting Started
 Prerequisites
 Python 3.11+
