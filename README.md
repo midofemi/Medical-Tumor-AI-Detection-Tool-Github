@@ -15,7 +15,7 @@ CI/CD Pipeline (GitLab): Automated Docker build, push, and Kubernetes deployment
 ```
 Architecture Diagram
 
-CLASS RESOURCES/Architecture diagram.png
+![Alt Text](Architecture diagram.png)
 
 ```
 
