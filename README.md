@@ -12,10 +12,10 @@ Containerization (Docker): Standardized application packaging.
 Orchestration (Kubernetes): Deployment manifests for Google Kubernetes Engine (GKE).
 CI/CD Pipeline (GitLab): Automated Docker build, push, and Kubernetes deployment.
 
-```
+
 Architecture Diagram
 
-![Alt Text](Architecture diagram.png)
+![alt text](Architecture-diagram.png)
 
 ```
 
