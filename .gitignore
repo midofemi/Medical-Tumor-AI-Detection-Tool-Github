@@ -1,0 +1,32 @@
+Brain-Brest-Tumor.ipynb
+Guide.docx
+.ipynb_checkpoints/
+venv
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+lib/
+lib64/
+CLASS RESOURCES
+# Logs
+logs/
+*.log
+DEPLOYMENT TO GCP.docx
+gcp-key.json
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+
+gcp-key.json
+checkpoints
+logs

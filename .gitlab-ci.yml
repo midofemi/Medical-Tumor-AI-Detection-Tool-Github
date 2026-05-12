@@ -1,0 +1,38 @@
+image: gcr.io/google.com/cloudsdktool/cloud-sdk:latest
+
+services:
+  - docker:dind
+
+stages:
+  - build
+  - deploy
+
+variables:
+  PROJECT_ID: ""
+  REGION: ""
+  REPO: ""
+  REGISTRY: ""
+  CLUSTER: ""
+  DOCKER_HOST: tcp://docker:2375
+  DOCKER_TLS_CERTDIR: ""
+
+build_docker_image:
+  stage: build
+  before_script:
+    - apt-get update
+    - apt-get install -y docker.io
+    - echo "$GCP_SA_KEY" | base64 -d > key.json
+    - gcloud auth activate-service-account --key-file=key.json
+    - gcloud auth configure-docker $REGISTRY
+  script:
+    - docker build -t $REGISTRY/$PROJECT_ID/$REPO/mlops-app:latest .
+    - docker push $REGISTRY/$PROJECT_ID/$REPO/mlops-app:latest
+
+deploy_to_gke:
+  stage: deploy
+  before_script:
+    - echo "$GCP_SA_KEY" | base64 -d > key.json
+    - gcloud auth activate-service-account --key-file=key.json
+  script:
+    - gcloud container clusters get-credentials $CLUSTER --region $REGION --project $PROJECT_ID
+    - kubectl apply -f kubernetes-deployment.yaml
